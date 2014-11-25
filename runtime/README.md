@@ -12,12 +12,15 @@ It is based on [`google/ruby`](https://index.docker.io/u/google/ruby) base image
 
         FROM google/ruby-runtime
 
+- Create an executable shell script named `pre-bundler.sh`.
+  The script is executed before "`bundle install`".  So you an install prerequisites in it.
+
 - Run the following command in your application directory:
 
         docker build -t app .
 
 ## Sample
-  
+
 See the [sources](/hello) for [`google/ruby-hello`](https://index.docker.io/u/google/ruby-hello) based on this image.
 
 ## Notes

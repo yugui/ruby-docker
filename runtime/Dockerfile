@@ -3,6 +3,8 @@ FROM google/ruby
 WORKDIR /app
 ONBUILD ADD Gemfile /app/Gemfile
 ONBUILD ADD Gemfile.lock /app/Gemfile.lock
+ONBUILD ADD pre-bundler.sh /app/pre-bundler.sh
+ONBUILD RUN ["/app/pre-bundler.sh"]
 ONBUILD RUN ["/usr/bin/bundle", "install", "--deployment"]
 ONBUILD ADD . /app
 
